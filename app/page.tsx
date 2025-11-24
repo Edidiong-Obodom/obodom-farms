@@ -104,22 +104,22 @@ export default function Home() {
 
   const milestones = [
     {
-      year: "2010",
+      year: "2025",
       title: "Rooted in family land",
-      copy: "Started as a small plot in Delta State focused on peppers.",
+      copy: "Started as few acres in Ogun State focused on peppers.",
     },
     {
-      year: "2016",
+      year: "2025",
       title: "Data enters the farm",
       copy: "Deployed our first sensor stack for moisture, canopy, and yield tracking.",
     },
     {
-      year: "2020",
+      year: "2025",
       title: "Integrated supply chain",
       copy: "Cold rooms, processing lines, and logistics partners to deliver fresher produce.",
     },
     {
-      year: "2024",
+      year: "2025",
       title: "Regenerative lab",
       copy: "In-house soil and leaf testing to close the loop on nutrients.",
     },
@@ -141,7 +141,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { number: "15+", label: "Years cultivating excellence" },
+    { number: "1+", label: "One year cultivating excellence" },
     { number: "28%", label: "Water saved via smart drip" },
     { number: "500+", label: "Outgrower farmers supported" },
     { number: "24/7", label: "Cold-chain ready logistics" },
