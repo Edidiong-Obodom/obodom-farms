@@ -1,0 +1,25 @@
+{
+  "name": "Obodom Integrated Farms",
+  "short_name": "Obodom Farms",
+  "description": "Premium sustainable farming solutions combining traditional wisdom with modern innovation. Quality agriculture for a better future.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/img/Obodom_Integrated_farms_logo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/Obodom_Integrated_farms_logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/Obodom_Integrated_farms_logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
