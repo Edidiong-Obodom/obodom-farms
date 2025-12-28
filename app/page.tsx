@@ -48,6 +48,12 @@ const floatVariants = {
 export default function Home() {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
+  const whatsappLink = "https://wa.me/2349020696451";
+  const capabilityDeckLink =
+    "mailto:contact@obodomfarms.com?subject=Capability%20Deck%20Request";
+  const cultivationPlaybookLink =
+    "mailto:contact@obodomfarms.com?subject=Cultivation%20Playbook%20Request";
+
   const pillars = [
     {
       icon: Sprout,
@@ -175,19 +181,23 @@ export default function Home() {
             </span>
           </motion.div>
           <div className="flex items-center gap-3">
-            <motion.button
+            <motion.a
               className="hidden rounded-full border border-border px-3 py-1 text-sm text-muted-foreground transition hover:border-primary hover:text-primary md:inline-flex"
+              href="#operations"
               whileHover={{ y: -1 }}
             >
               View field reports
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
               className="flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:shadow-xl"
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
               Plan a farm tour <ArrowUpRight className="h-4 w-4" />
-            </motion.button>
+            </motion.a>
           </div>
         </div>
       </nav>
@@ -233,20 +243,22 @@ export default function Home() {
               animate="visible"
               transition={{ delay: 0.3 }}
             >
-              <motion.button
+              <motion.a
                 className="w-full rounded-xl bg-primary px-6 py-3 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition hover:shadow-xl sm:w-auto"
+                href="#pillars"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
                 Explore our ecosystem
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
                 className="w-full rounded-xl border border-border px-6 py-3 text-base font-semibold text-foreground transition hover:border-primary hover:text-primary sm:w-auto"
+                href={capabilityDeckLink}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 Download capability deck
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             <motion.div
@@ -314,7 +326,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 lg:px-8">
+      <section className="px-4 sm:px-6 lg:px-8" id="pillars">
         <motion.div
           className="mx-auto flex max-w-6xl flex-col gap-10 rounded-3xl border border-border/80 bg-background/60 p-10 shadow-lg shadow-primary/10 backdrop-blur"
           variants={containerVariants}
@@ -377,7 +389,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
+      <section className="px-4 py-20 sm:px-6 lg:px-8" id="operations">
         <div className="mx-auto max-w-6xl space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
@@ -496,9 +508,9 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {milestones.map((item) => (
+            {milestones.map((item, i) => (
               <motion.div
-                key={item.year}
+                key={`${i}-${item.year}`}
                 className="relative overflow-hidden rounded-2xl border border-primary/20 bg-background p-6 shadow-sm shadow-primary/10"
                 variants={itemVariants}
               >
@@ -581,12 +593,20 @@ export default function Home() {
               className="flex flex-col gap-3 sm:flex-row sm:items-center"
               variants={itemVariants}
             >
-              <button className="rounded-xl bg-foreground px-6 py-3 text-sm font-semibold text-background shadow-xl transition hover:shadow-2xl">
+              <a
+                className="rounded-xl bg-foreground px-6 py-3 text-sm font-semibold text-background shadow-xl transition hover:shadow-2xl"
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Book a strategy call
-              </button>
-              <button className="rounded-xl border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary">
+              </a>
+              <a
+                className="rounded-xl border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary"
+                href={cultivationPlaybookLink}
+              >
                 Download cultivation playbook
-              </button>
+              </a>
             </motion.div>
           </div>
           <div className="grid gap-6 text-sm text-muted-foreground md:grid-cols-3">
